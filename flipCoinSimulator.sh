@@ -2,7 +2,7 @@
 
 head=0
 tail=0
-
+diff=0
 while [[ $head -lt 21 && $tail -lt 21 ]]
 do
 	toss=$((RANDOM%2))
@@ -15,10 +15,12 @@ do
 	fi
 	if [ $head -eq 21 ]
 	then
-		echo "Head Wins by $head times"
+		diff=$(($head - $tail))
+		echo "Head Wins by $diff"
 	elif [ $tail -eq 21 ]
 	then
-		echo "Tail Wins by $tail times"
+		diff=$(($tail - $head))
+		echo "Tail Wins by $diff"
 	elif [[ $head -eq 21 && $echo -eq 21 ]]
 	then
 		echo "It's a Tie"
