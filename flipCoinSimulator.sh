@@ -1,17 +1,22 @@
 #!/bin/bash -x
 
 
+read -p "Enter the range : " num
 
-toss=$((RANDOM%2))
+for ((i=0;i<num;i++))
+do
+	toss=$((RANDOM%2))
 
 
-if [ $toss -eq 0 ]
+	if [ $toss -eq 0 ]
 
-then
+	then
 
-	echo "Head Wins"
+		echo "Head Wins"
 
-else
+	else
 
-	echo "Tail Wins"
-fi
+		echo "Tail Wins"
+
+	fi
+done
